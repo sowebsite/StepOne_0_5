@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Mail;
 using StepOneEducation_1_0.Models;
 using System.IO;
+using Common;
 
 namespace StepOneEducation_1_0.Controllers
 {
@@ -24,42 +25,46 @@ namespace StepOneEducation_1_0.Controllers
         public ActionResult SendFileByEmail(HttpPostedFileBase essaySubmit, FormCollection form)
         {
             if (ModelState.IsValid)
-            {                
-                    string from = "steponeeducationusa@gmail.com";
-                    string To = "steponeeducationusa@gmail.com";
-                    string textIntxtArea = form["txtEssay"].ToString();
-                    string essayType = "作文类型为：" + form["essayType"].ToString() +"\t";
+            {
+                //string from = "steponeeducationusa@gmail.com";
+                //string To = "steponeeducationusa@gmail.com";
+                string textIntxtArea = form["txtEssay"].ToString();
+                string essayType = "作文类型为：" + form["essayType"].ToString() + "\t";
 
-                if(essaySubmit != null || (textIntxtArea != null && textIntxtArea.Trim().Length != 0))
-                { 
-                    using(MailMessage mail = new MailMessage(from, To))
-                    {
-                        //mail.Subject = objModelMail.Subject;
-                        //mail.Body = objModelMail.Body;                        
+                if (essaySubmit != null || (textIntxtArea != null && textIntxtArea.Trim().Length != 0))
+                {
+                    Email email = new Email();
 
-                        mail.Subject = "作业修改";
-                        mail.Body = essayType + "请批改作业\t";
+                    email.sendFormEmail(textIntxtArea, essayType, essaySubmit);
 
-                        if (essaySubmit != null)
-                        {   
-                            string fileName = Path.GetFileName(essaySubmit.FileName);
-                            mail.Attachments.Add(new Attachment(essaySubmit.InputStream, fileName));
-                        }
-                        else
-                        {
-                            mail.Body += textIntxtArea;
-                        }
+                    //using(MailMessage mail = new MailMessage(from, To))
+                    //{
+                    //    //mail.Subject = objModelMail.Subject;
+                    //    //mail.Body = objModelMail.Body;                        
 
-                        mail.IsBodyHtml = false;
-                        SmtpClient smtp = new SmtpClient();
-                        smtp.Host = "smtp.gmail.com";
-                        smtp.EnableSsl = true;
-                        NetworkCredential nc = new NetworkCredential(from, "Hope7890");
-                        smtp.UseDefaultCredentials = true;
-                        smtp.Credentials = nc;
-                        smtp.Port = 587;
-                        smtp.Send(mail);
-                    }
+                    //    mail.Subject = "作业修改";
+                    //    mail.Body = essayType + "请批改作业\t";
+
+                    //    if (essaySubmit != null)
+                    //    {   
+                    //        string fileName = Path.GetFileName(essaySubmit.FileName);
+                    //        mail.Attachments.Add(new Attachment(essaySubmit.InputStream, fileName));
+                    //    }
+                    //    else
+                    //    {
+                    //        mail.Body += textIntxtArea;
+                    //    }
+
+                    //    mail.IsBodyHtml = false;
+                    //    SmtpClient smtp = new SmtpClient();
+                    //    smtp.Host = "smtp.gmail.com";
+                    //    smtp.EnableSsl = true;
+                    //    NetworkCredential nc = new NetworkCredential(from, "Hope7890");
+                    //    smtp.UseDefaultCredentials = true;
+                    //    smtp.Credentials = nc;
+                    //    smtp.Port = 587;
+                    //    smtp.Send(mail);
+                    //}
                 }
             }
             return RedirectToAction("index", "OnlineTraining");

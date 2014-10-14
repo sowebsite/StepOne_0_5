@@ -209,7 +209,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppUser.cs" />
-    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\HighSchool.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\StepOneDbContext.cs" />
@@ -329,6 +328,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{444e4bb5-9e28-4952-b802-2756fb7d49b7}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
