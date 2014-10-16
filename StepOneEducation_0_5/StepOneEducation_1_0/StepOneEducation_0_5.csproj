@@ -199,10 +199,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\EssayCorrectionController.cs" />
     <Compile Include="Controllers\HighSchoolController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OnlineTrainingController.cs" />
+    <Compile Include="Controllers\QandAController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +227,8 @@
     <Content Include="Content\new_css.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\OnlineTrainingIndex.css" />
+    <Content Include="Content\QA_component.css" />
+    <Content Include="Content\QA_demo.css" />
     <Content Include="Content\SlideShow.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -258,12 +262,14 @@
     <Content Include="Images\冯浩正面照.jpg" />
     <Content Include="Images\四人办公室合影.png" />
     <Content Include="Images\张丹正面照.jpg" />
+    <Content Include="Scripts\bootstrap-filestyle.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\website1.com.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\cbpFWTabs.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -317,6 +323,8 @@
     <Content Include="Views\OnlineTraining\teacherDetails.cshtml" />
     <Content Include="Views\OnlineTraining\TeacherList.cshtml" />
     <Content Include="Views\OnlineTraining\StepFlow.cshtml" />
+    <Content Include="Views\ContactUs\ContactUs.cshtml" />
+    <Content Include="Views\QandA\QandA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

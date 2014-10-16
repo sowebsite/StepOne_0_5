@@ -26,16 +26,18 @@ namespace StepOneEducation_1_0.Controllers
         {
             if (ModelState.IsValid)
             {
-                //string from = "steponeeducationusa@gmail.com";
+                string name = form["name"].ToString();
+                string emailfrom = form["email"].ToString();
                 //string To = "steponeeducationusa@gmail.com";
                 string textIntxtArea = form["txtEssay"].ToString();
                 string essayType = "作文类型为：" + form["essayType"].ToString() + "\t";
+                string comment = form["comment"].ToString();
 
                 if (essaySubmit != null || (textIntxtArea != null && textIntxtArea.Trim().Length != 0))
                 {
                     Email email = new Email();
 
-                    email.sendFormEmail(textIntxtArea, essayType, essaySubmit);
+                    email.sendFormEmail(name, emailfrom, comment, textIntxtArea, essayType, essaySubmit);
 
                     //using(MailMessage mail = new MailMessage(from, To))
                     //{

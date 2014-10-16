@@ -17,7 +17,7 @@ namespace Common
         public string Subject { get; set; }
         public string Body { get; set; }
 
-        public void sendFormEmail(string textIntxtArea, string essayType, HttpPostedFileBase essaySubmit)
+        public void sendFormEmail(string name, string emailfrom, string comment, string textIntxtArea, string essayType, HttpPostedFileBase essaySubmit)
         {
             string from = "steponeeducationusa@gmail.com";
             string To = "steponeeducationusa@gmail.com";
@@ -25,13 +25,13 @@ namespace Common
             //string essayType = "作文类型为：" + form["essayType"].ToString() + "\t";
 
 
-            using (MailMessage mail = new MailMessage(from, To))
+            using (MailMessage mail = new MailMessage(emailfrom, To))
             {
                 //mail.Subject = objModelMail.Subject;
                 //mail.Body = objModelMail.Body;                        
 
-                mail.Subject = "作业修改";
-                mail.Body = essayType + "请批改作业\t";
+                mail.Subject = "作文修改  来自" + name + " " + emailfrom;
+                mail.Body = essayType + "\t请批改作业\n\n" + comment + "\n\n";
 
                 if (essaySubmit != null)
                 {
