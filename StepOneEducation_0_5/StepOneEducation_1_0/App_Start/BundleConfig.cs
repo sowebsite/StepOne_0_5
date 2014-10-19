@@ -21,7 +21,7 @@ namespace StepOneEducation_1_0
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js", "~/Scripts/bootstrap-filestyle.js",
+                      "~/Scripts/bootstrap.js", "~/Scripts/bootstrap-filestyle.js", 
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -29,7 +29,7 @@ namespace StepOneEducation_1_0
                       "~/Content/site.css", "~/Content/new_css.css", 
                       "~/Content/SlideShow.css",
                       "~/Content/component.css", "~/Content/demo.css", "~/Content/normalize.css", //online training page
-                      "~/Content/QA_component.css", "~/Content/QA_demo.css"
+                      "~/Content/QandA.css"
                     ));
 
             

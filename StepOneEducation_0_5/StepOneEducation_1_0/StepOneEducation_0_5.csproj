@@ -227,8 +227,7 @@
     <Content Include="Content\new_css.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\OnlineTrainingIndex.css" />
-    <Content Include="Content\QA_component.css" />
-    <Content Include="Content\QA_demo.css" />
+    <Content Include="Content\QandA.css" />
     <Content Include="Content\SlideShow.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -269,7 +268,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Properties\PublishProfiles\website1.com.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
-    <Content Include="Scripts\cbpFWTabs.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
