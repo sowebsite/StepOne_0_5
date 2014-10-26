@@ -19,8 +19,8 @@ namespace Common
 
         public void sendFormEmail(string name, string emailfrom, string comment, string textIntxtArea, string essayType, HttpPostedFileBase essaySubmit)
         {
-            string from = "steponeeducationusa@gmail.com";
-            string To = "steponeeducationusa@gmail.com";
+            string from = "soeduwebsite@gmail.com";
+            string To = "soeduwebsite@gmail.com";
             //string textIntxtArea = form["txtEssay"].ToString();
             //string essayType = "作文类型为：" + form["essayType"].ToString() + "\t";
 
@@ -47,7 +47,7 @@ namespace Common
                 SmtpClient smtp = new SmtpClient();
                 smtp.Host = "smtp.gmail.com";
                 smtp.EnableSsl = true;
-                NetworkCredential nc = new NetworkCredential(from, "Hope7890");
+                NetworkCredential nc = new NetworkCredential(from, "Hope4321");
                 smtp.UseDefaultCredentials = true;
                 smtp.Credentials = nc;
                 smtp.Port = 587;
